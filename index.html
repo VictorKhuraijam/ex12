@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assigning random color and random background to 5 different boxes</title>
+
+  <style>
+    .container{
+      height: 500px;
+      width: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(237, 233, 240);
+      margin: auto;
+      gap: 10px;
+    }
+
+    .box{
+      height: 80px;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">Box</div>
+    <div class="box box2">Box</div>
+    <div class="box box3">Box</div>
+    <div class="box box4">Box</div>
+    <div class="box box5">Box</div>
+  </div>
+
+  <script>
+
+    function randcolor(){
+      let red = Math.floor(Math.random()* 256);
+      let green = Math.floor(Math.random()* 256);
+      let blue = Math.floor(Math.random()* 256);
+
+      let colour = `rgb(${red}, ${green}, ${blue})`
+      console.log(colour);
+      return colour
+
+    }
+    const colorBox = document.body.querySelectorAll('.box');
+    colorBox[0].style.color = randcolor();
+    colorBox[1].style.color = randcolor();
+    colorBox[2].style.color = randcolor();
+    colorBox[3].style.color = randcolor();
+    colorBox[4].style.color = randcolor();
+    colorBox[0].style.backgroundColor = randcolor();
+    colorBox[1].style.backgroundColor = randcolor();
+    colorBox[2].style.backgroundColor = randcolor();
+    colorBox[3].style.backgroundColor = randcolor();
+    colorBox[4].style.backgroundColor = randcolor();
+    console.log(colorBox)
+  </script>
+</body>
+</html>
